@@ -4,196 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MusicDot - Sobre nós</title>
-<style>
-    /* Reset e Configurações Globais */
-    * {
-        border: 0;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        /* Reset e Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        font: 16px/1.5 'Segoe UI', times new roman, serif;
-        max-width: 940px;
-        margin: 0 auto;
-        padding: 0 15px;
-        background-color: #121212;
-        color: #e0e0e0;
-    }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #fff;
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    /* Estilização de Títulos Gerais */
-    h1, h2, h3 {
-        color: #e0e0e0;
-        margin-top: 20px;
-        margin-bottom: 15px;
-    }
+        /* Topo e Logo */
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 150px;
+        }
 
-    /* Estilo específico para o H1 principal */
-    h1 {
-        background-color: #1e1e1e;
-        padding: 10px;
-        border-radius: 8px;
-        border-bottom: 2px solid #444;
-    }
+        /* Estilização de Títulos */
+        h1, h2 {
+            font-size: 24px;
+            background-color: #EAF3F7; /* Azul bem claro das imagens */
+            padding: 10px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            color: #333;
+        }
 
-    /* --- NOVO: Estilo de Destaque para Subtítulos (História, Diferenciais, etc) --- */
-    main h2, 
-    main h3,
-    section h2.subtitulo { /* Garante que pegue também o h2 com classe subtitulo se estiver fora do main */
-        background-color: #1e1e1e;      /* Fundo cinza escuro */
-        padding: 10px 15px;             /* Espaço interno */
-        border-left: 5px solid #4da6ff; /* Faixa azul lateral */
-        border-radius: 0 5px 5px 0;     /* Arredonda lado direito */
-        color: #fff;                    
-        text-transform: uppercase;      
-        letter-spacing: 1px;            
-        font-size: 1.2rem;              
-        width: fit-content;             /* Fundo acompanha o tamanho do texto */
-        margin-top: 40px;               
-    }
+        h3 {
+            font-size: 20px;
+            border-bottom: 2px solid #333; /* Linha preta sob os subtítulos */
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
 
-    /* Logo com efeito de interação */
-    .logo {
-        display: block;
-        margin: 50px auto 20px auto;
-        text-align: center;
-    }
-    .logo img {
-        display: block;
-        width: 150px;
-        margin: 0 auto;
-        transition: transform 0.2s ease;
-    }
+        /* Parágrafos e Listas */
+        p {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
 
-    /* Conteúdo e Imagens */
-    p {
-        margin-bottom: 1.5em;
-        text-align: justify;
-    }
+        ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
 
-    figure {
-        text-align: center;
-        background-color: #1e1e1e;
-        color: #ccc;
-        padding: 15px;
-        margin: 30px auto;
-        width: fit-content;
-        border-radius: 12px;
-    }
+        li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
 
-    figure img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
+        /* Imagens e Legendas */
+        figure {
+            text-align: center;
+            margin: 30px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
 
-    figcaption {
-        margin-top: 10px;
-        font-size: 0.9em;
-    }
+        figure img {
+            max-width: 100%;
+            height: auto;
+        }
 
-    /* Lista de Diferenciais */
-    .diferenciais-lista {
-        padding-left: 20px;
-        margin-bottom: 40px;
-    }
-    .diferenciais-lista li {
-        margin-bottom: 10px;
-    }
+        figcaption {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
 
-    /* --- ESTILO DO CARD DE CONTATO --- */
-    footer {
-        margin-top: 50px;
-        margin-bottom: 50px; 
-        padding: 40px;
-        background-color: #1e1e1e;
-        border: 1px solid #333; 
-        border-radius: 12px;    
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3); 
-    }
+        /* Seção de Contato */
+        .contato-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 50px;
+            margin-top: 20px;
+        }
 
-    /* Título Principal do Footer (CONTATO) */
-    footer h2 {
-        font-size: 1.8rem;
-        text-transform: uppercase; 
-        font-weight: 800;          
-        color: #fff;               
-        letter-spacing: 2px;       
-        margin-bottom: 30px;
-        border-bottom: 1px solid #333; 
-        padding-bottom: 10px;
-    }
+        .contato-secao h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
 
-    /* Subtítulos (Correspondência e Telefones) */
-    footer h3 {
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        color: #4da6ff; 
-        margin-bottom: 15px;
-        border-left: 4px solid #4da6ff;
-        padding-left: 10px;
-        background: none; 
-    }
+        .contato-secao h4 small {
+            font-weight: normal;
+            font-size: 12px;
+            color: #666;
+        }
 
-    /* Texto pequeno dentro dos títulos (horários) */
-    footer h3 small {
-        display: block;
-        font-weight: normal;
-        text-transform: none; 
-        font-size: 0.7em;
-        color: #888;
-        margin-top: 5px;
-    }
+        address {
+            font-style: italic;
+            font-size: 14px;
+            line-height: 1.4;
+        }
 
-    .contato-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 30px;
-    }
+        .telefones p {
+            margin-bottom: 5px;
+        }
 
-    .contato-secao {
-        flex: 1;
-        min-width: 250px;
-    }
+        a {
+            color: #0044cc;
+            text-decoration: underline;
+        }
 
-    address {
-        font-style: normal;
-        color: #ccc; 
-        line-height: 1.8;
-        font-size: 0.95rem;
-    }
-
-    footer a {
-        color: #fff; 
-        font-weight: bold;
-        text-decoration: none;
-        border-bottom: 1px dotted #4da6ff; 
-    }
-
-    footer a:hover {
-        color: #4da6ff;
-        border-bottom: 1px solid #4da6ff;
-    }
-</style>
+    </style>
 </head>
 <body>
 
     <header>
-        <figure class="logo">
-            <img src="img/logo.svg" alt="MusicDot" id="logoImg">
-        </figure>
+        <div class="logo">
+            <img src="img/logo.svg" alt="MusicDot">
+        </div>
     </header>
 
     <main>
         <section>
-            <h1>Sobre a Empresa</h1>
+            <h1>Sobre a empresa</h1>
             <p>A MusicDot é a maior escola online de música em todo o mundo. Fundada em 1932, possui estúdios em 124 países, sendo líder de mercado com mais de 90% de participação em 118 deles.</p>
             <p>Nossa matriz fica em Mafra, em Santa Catarina. De lá, saem grande parte das gravações de nossos cursos. Nossa matriz:</p>
 
             <figure>
-                <img src="img/matriz-musicdot.png" alt="Foto da sede da MusicDot em Mafra">
+                <img src="img/matriz-musicdot.png" alt="Matriz MusicDot">
                 <figcaption>Matriz MusicDot</figcaption>
             </figure>
 
@@ -203,83 +145,55 @@
         <section>
             <h3>História</h3>
             <figure>
-                <img src="img/familia-tupfeln.jpg" alt="Retrato da Família Tüpfein">
+                <img src="img/familia-tupfeln.jpg" alt="Família Tüpfein">
                 <figcaption>Família Tüpfein</figcaption>
             </figure>
 
-            <p>A fundação em 1932 ocorreu no momento da descoberta econômica de cursos por stream online no interior de Santa Catarina. A família Tüpfeln, tradicional da região, investiu todas as suas economias nessa nova iniciativa, revolucionária para a época. A fundadora Frau Dagmar Olaf Tüpfeln, dotada de particular visão administrativa, guiou os negócios da empresa durante mais de 50 anos.</p>
+            <p>A fundação em 1932 ocorreu no momento da descoberta econômica de cursos por stream online no interior de Santa Catarina. A família Tüpfeln, tradicional da região, investiu todas as suas economias nessa nova iniciativa, revolucionária para a época. A fundadora Frau Dagmar Olaf Tüpfeln, dotada de particular visão administrativa, guiou os negócios da empresa durante mais de 50 anos, muitos deles ao lado de seu filho Ernst Noten Tüpfein, atual CEO. O nome da empresa é inspirado no nome da família.</p>
 
-            <p>O crescimento da empresa foi praticamente instantâneo. Nos primeiros 5 anos, já atendia 18 países. Bateu a marca de 100 países em apenas 15 anos de existência. Até hoje, já atendeu 2 bilhões de usuários diferentes.</p>
+            <p>O crescimento da empresa foi praticamente instantâneo. Nos primeiros 5 anos, já atendia 18 países. Bateu a marca de 100 países em apenas 15 anos de existência. Até hoje, já atendeu 2 bilhões de usuários diferentes, em bilhões de diferentes pedidos.</p>
+
+            <p>O crescimento em número de funcionários é também assombroso. Hoje, é a maior empregadora do Brasil, mas mesmo após apenas 5 anos de sua existência, já possuía 30 mil funcionários. Fora do Brasil, há 240 mil funcionários, além dos 890 mil brasileiros nas instalações de Mafra e nos escritórios em todo o país.</p>
+
+            <p>Dada a importância econômica da empresa para o Brasil, a família Tüpfein já recebeu diversos prêmios, homenagens e condecorações. Todos os presidentes do Brasil já visitaram as instalações da MusicDot, além de presidentes da União Europeia, Ásia e o secretário-geral da ONU.</p>
         </section>
-    </main>
 
-    <section>
-            <h2 class="subtitulo">Diferenciais</h2>
-            <ul class="diferenciais-lista">
+        <section>
+            <h3>Diferenciais</h3>
+            <ul>
                 <li>Menor preço do mercado, garantido</li>
                 <li>Se você achar um serviço mais barato, leva 1 mês de graça</li>
                 <li>Pague em reais, dólares, euros, libras, dodgecoins, litecoins ou bitcoins</li>
                 <li>Todas as compras acompanham acesso à Alura</li>
                 <li>Maior escola de música online do mundo</li>
-                <li>Atendimento via telefone, email, chat, twitter, facebook, instagram e WhatsApp</li>
+                <li>Atendimento via telefone, email, chat, twitter, facebook, instagram, ICQ, WhatsApp, SMS, carta, fax, sinal de fumaça e telegrama</li>
                 <li>Presente em 124 países</li>
                 <li>Mais de um milhão de funcionários em todo o mundo</li>
             </ul>
         </section>
+    </main>
 
-    <footer id="contato">
+    <section id="contato">
         <h2>Contato</h2>
         <div class="contato-container">
             
-            <section class="contato-secao">
-                <h3>Correspondência 
-                    <small>(todos os dias, das 9h às 18h)</small>
-                </h3>
+            <div class="contato-secao">
+                <h4>Correspondência <small>(todos os dias, das 9h às 18h)</small></h4>
                 <address>
-                    <strong>AOVS Sistemas de Informática S.A</strong><br>
+                    AOVS Sistemas de Informática S.A<br>
                     Rua Vergueiro, 3185, 8º andar<br>
-                    Vila Mariana, São Paulo - SP
+                    Vila Mariana<br>
+                    São Paulo - SP
                 </address>
-            </section>
+            </div>
 
-            <section class="contato-secao">
-                <h3>Telefones 
-                    <small>(segunda à sexta, das 9h às 18h)</small>
-                </h3>
+            <div class="contato-secao telefones">
+                <h4>Telefones <small>(segunda à sexta, das 9h às 18h)</small></h4>
                 <p>Pessoa Física: <a href="tel:1141183319">(11) 4118-3319</a></p>
                 <p>Pessoa Jurídica: <a href="tel:1141182172">(11) 4118-2172</a></p>
-            </section>
-
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // Efeito do Logo que foge do cursor
-        const logo = document.getElementById('logoImg');
-        document.addEventListener('mousemove', (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            const rect = logo.getBoundingClientRect();
-            
-            // Centro do logo
-            const logoX = rect.left + rect.width / 2;
-            const logoY = rect.top + rect.height / 2;
-            
-            const dx = logoX - mouseX;
-            const dy = logoY - mouseY;
-            const distance = Math.sqrt(dx*dx + dy*dy);
-            
-            // Distância de ativação do efeito
-            const threshold = 100;
-
-            if(distance < threshold){
-                const moveX = (dx / distance) * 30;
-                const moveY = (dy / distance) * 30;
-                logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            } else {
-                logo.style.transform = `translate(0,0)`;
-            }
-        });
-    </script>
 </body>
 </html>
